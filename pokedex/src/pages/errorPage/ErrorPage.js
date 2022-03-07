@@ -3,7 +3,7 @@ import React from "react";
 function ErrorPage() {
   return (
     <div>
-      Página não encontrada
+      Página não encontrada...
     </div>
   );
 }
