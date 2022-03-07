@@ -1,11 +1,11 @@
 import React from "react";
 
-function Pokedex() {
+function HomePage() {
   return (
     <div>
-      Pokedex
+      Home
     </div>
   );
 }
 
-export default Pokedex;
+export default HomePage;

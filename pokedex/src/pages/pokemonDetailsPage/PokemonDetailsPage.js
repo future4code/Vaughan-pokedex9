@@ -1,6 +1,6 @@
 import React from "react";
 
-function PokemonDetails() {
+function PokemonDetailsPage() {
   return (
     <div>
       PokemonDetails
@@ -8,4 +8,4 @@ function PokemonDetails() {
   );
 }
 
-export default PokemonDetails;
+export default PokemonDetailsPage;
