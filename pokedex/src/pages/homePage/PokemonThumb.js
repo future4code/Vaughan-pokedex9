@@ -1,12 +1,23 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router";
 import { goToPokemonDetailsPage } from "../../routes/coordinator";
 import "./style.css"
-import pokeball from "../../assets/pokeball.png"
+import pokeballImg from "../../assets/pokeball.png"
 import more from "../../assets/plus.png"
+import { PokeballContext } from "../../global/GlobalStateContext";
 
 const PokemonThumb = ({id, name, image, type}) => {
     const navigate = useNavigate();
+    const {pokeballIdList, setPokeballIdList} = useContext(PokeballContext);
+
+    const [disable, setDisable] = useState(false)
+
+    const addToPokeball = () => {
+        const addNewId = [...pokeballIdList, id];
+        setPokeballIdList(addNewId);
+        setDisable(true);
+    };
+    console.log(pokeballIdList, disable);
 
     const style = `thumb-container ${type}`
 
@@ -51,7 +62,7 @@ const PokemonThumb = ({id, name, image, type}) => {
             default:
                 return "Normal"
         }
-    }
+    };
 
     return(
         <div className={style}>
@@ -64,8 +75,8 @@ const PokemonThumb = ({id, name, image, type}) => {
                 <small>Tipo: {typeInPortuguese()}</small>
             </div>
             <div className="buttons-card">
-                <button>
-                    <img src={pokeball} alt="Ícone de pokebola"/>
+                <button onClick={addToPokeball} disabled={disable}>
+                    <img src={pokeballImg} alt="Ícone de pokebola"/>
                     <>Adicionar Pokedex</>
                 </button>
                 <button onClick={() => goToPokemonDetailsPage(navigate, name)}>

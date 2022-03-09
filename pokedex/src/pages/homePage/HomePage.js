@@ -20,7 +20,6 @@ export default function HomePage() {
         const data = await res.json()
 
         setAllPokemons(currentList => [...currentList, data])
-        // allPokemons.push(data)
       })
     }
     
