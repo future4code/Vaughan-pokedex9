@@ -3,7 +3,8 @@ import React from "react";
 function PokemonDetailsPage() {
   return (
     <div>
-      PokemonDetails
+      <Header/>
+      <h3>PokemonDetails</h3>
     </div>
   );
 }
