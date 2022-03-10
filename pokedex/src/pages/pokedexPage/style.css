@@ -86,6 +86,11 @@ code {
   grid-template-columns: repeat(5, 1fr);
   gap: 20px;
 }
+.all-containers > p {
+  text-align: center;
+  grid-row: 1/-1;
+  grid-column: 1/-1;
+}
 .thumb-container {
   display: flex;
   flex-direction: column;
