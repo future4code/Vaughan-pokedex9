@@ -6,17 +6,20 @@ import pokeballImg from "../../assets/pokeball.png"
 import more from "../../assets/plus.png"
 import { PokedexContext } from "../../global/GlobalStateContext";
 
-const PokemonThumb = ({id, name, image, type}) => {
+const PokemonThumb = ({id, name, image, type, removePokemonOfPokedex}) => {
     const navigate = useNavigate();
     const {pokedexIdList, setPokedexIdList} = useContext(PokedexContext);
 
-    const [disable, setDisable] = useState(false)
+    // console.log("Andtes da remoção",pokedexIdList)
 
-    const addToPokedex = () => {
-        const addNewId = [...pokedexIdList, id];
-        setPokedexIdList(addNewId);
-        setDisable(true);
-    };
+    // const removePokemonOfPokedex = (id) => {
+    //     const copyPokemonList = [...pokedexIdList];
+        
+    //     const removePokemon = copyPokemonList.filter((pokemon) => {
+    //         return pokemon !== id;
+    //     });
+    //     setPokedexIdList(removePokemon);
+    // };
 
     const style = `thumb-container ${type}`
 
@@ -74,19 +77,10 @@ const PokemonThumb = ({id, name, image, type}) => {
                 <small>Tipo: {typeInPortuguese()}</small>
             </div>
             <div className="buttons-card">
-                {(pokedexIdList.findIndex((pokemonId) => pokemonId === id)) === -1
-                ? (
-                    <button onClick={addToPokedex} disabled={disable}>
-                        <img src={pokeballImg} alt="Ícone de pokebola"/>
-                        <>Adicionar Pokedex</>
-                    </button>)
-                : (
-                    <button disabled={true}>
-                        <img src={pokeballImg} alt="Ícone de pokebola"/>
-                        <>Adicionar Pokedex</>
-                    </button>)                
-                }
-                
+                <button onClick={removePokemonOfPokedex} >
+                    <img src={pokeballImg} alt="Ícone de pokebola"/>
+                    <>Remover Pokedex</>
+                </button>
                 <button onClick={() => goToPokemonDetailsPage(navigate, name)}>
                     <img className="more-icon" src={more} alt="Ícone de mais"/>
                     <p>Veja mais</p>

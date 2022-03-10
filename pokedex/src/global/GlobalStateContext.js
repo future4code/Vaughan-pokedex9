@@ -1,3 +1,3 @@
 import React from "react";
 
-export const PokeballContext = React.createContext();
+export const PokedexContext = React.createContext();

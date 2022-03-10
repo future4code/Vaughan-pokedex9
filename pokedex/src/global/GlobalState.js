@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { PokeballContext } from "./GlobalStateContext";
+import { PokedexContext } from "./GlobalStateContext";
 
 export const GlobalState = (props) => {
-    const [pokeballIdList, setPokeballIdList] = useState([]);
+    const [pokedexIdList, setPokedexIdList] = useState([]);
     return (
-        <PokeballContext.Provider value={{pokeballIdList, setPokeballIdList}}>
+        <PokedexContext.Provider value={{pokedexIdList, setPokedexIdList}}>
             {props.children}
-        </PokeballContext.Provider>
+        </PokedexContext.Provider>
     );
 };
 
