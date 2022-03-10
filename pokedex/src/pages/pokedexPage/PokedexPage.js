@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
 import { URL_BASE } from "../../constants/url";
+import { removePokemonOfPokedex } from "../../functions/add&removePokemon";
 import { PokedexContext } from "../../global/GlobalStateContext";
 import PokemonThumb from "./PokemonThumb";
 import "./style.css";
@@ -24,14 +25,6 @@ function PokedexPage() {
       };
     });
   };
-
-  const removePokemonOfPokedex = (id) => {
-    const copyPokemonIdList = [...pokedexIdList];
-    const removedPokemonList = copyPokemonIdList.filter((pokemonId)=> {
-      return pokemonId !== id;
-    });
-    setPokedexIdList(removedPokemonList);
-  };
   
   return (
     <div className="app-container">
@@ -44,7 +37,7 @@ function PokedexPage() {
             }).map((pokemon) => {
               return (
                 <PokemonThumb
-                  removePokemonOfPokedex={() => removePokemonOfPokedex(pokemon.id)}
+                  removePokemonOfPokedex={() => removePokemonOfPokedex(pokemon.id, pokedexIdList, setPokedexIdList)}
                   id={pokemon.id}
                   name={pokemon.name}
                   image={pokemon.sprites.other.dream_world.front_default}

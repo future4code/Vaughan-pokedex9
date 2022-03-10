@@ -5,66 +5,12 @@ import "./style.css"
 import pokeballImg from "../../assets/pokeball.png"
 import more from "../../assets/plus.png"
 import { PokedexContext } from "../../global/GlobalStateContext";
+import { typeInPortuguese } from "../../functions/typeInPortuguese";
 
 const PokemonThumb = ({id, name, image, type, removePokemonOfPokedex}) => {
     const navigate = useNavigate();
-    const {pokedexIdList, setPokedexIdList} = useContext(PokedexContext);
-
-    // console.log("Andtes da remoção",pokedexIdList)
-
-    // const removePokemonOfPokedex = (id) => {
-    //     const copyPokemonList = [...pokedexIdList];
-        
-    //     const removePokemon = copyPokemonList.filter((pokemon) => {
-    //         return pokemon !== id;
-    //     });
-    //     setPokedexIdList(removePokemon);
-    // };
 
     const style = `thumb-container ${type}`
-
-    const typeInPortuguese = () => {
-        switch (type) {
-            case "normal":
-                return "Normal"
-            case "fire":
-                return "Fogo"
-            case "water":
-                return "Água"
-            case "grass":
-                return "Grama"
-            case "flying":
-                return "Voador"
-            case "fighting": 
-                return "Lutador"
-            case "poison": 
-                return "Veneno"
-            case "electric":
-                return "Elétrico"
-            case "ground":
-                return "Terra"
-            case "rock": 
-                return "Pedra"
-            case "psychic":
-                return "Psíquico"
-            case "ice":
-                return "Gelo"
-            case "bug":
-                return "Inseto"
-            case "ghost":
-                return "Fantasma"
-            case "steel":
-                return "Ferro"
-            case "dragon":
-                return "Dragão"
-            case "dark":
-                return "Sombrio"
-            case "fairy":
-                return "Fada"
-            default:
-                return "Normal"
-        }
-    };
 
     return(
         <div className={style}>
@@ -74,7 +20,7 @@ const PokemonThumb = ({id, name, image, type, removePokemonOfPokedex}) => {
             <img src={image} alt={name}></img>
             <div className="detail-wrapper">
                 <h3>{name}</h3>
-                <small>Tipo: {typeInPortuguese()}</small>
+                <small>Tipo: {typeInPortuguese(type)}</small>
             </div>
             <div className="buttons-card">
                 <button onClick={removePokemonOfPokedex} >
