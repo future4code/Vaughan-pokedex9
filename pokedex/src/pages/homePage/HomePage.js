@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { URL_BASE } from "../../constants/url";
 import PokemonThumb from "./PokemonThumb";
 import "./style.css"
+import { goToPoxedexPage } from "../../routes/coordinator";
 
 export default function HomePage() {
 
@@ -20,7 +22,6 @@ export default function HomePage() {
         const data = await res.json()
 
         setAllPokemons(currentList => [...currentList, data])
-        // allPokemons.push(data)
       })
     }
     
@@ -29,8 +30,10 @@ export default function HomePage() {
 
   useEffect(() => { getAllPokemons() }, [])
 
+  const navigate = useNavigate();
   return (
     <div className="app-container">
+      <button onClick={() => goToPoxedexPage(navigate)}>Ir Para pokedex</button>
       <div className="pokemon-container">
 
         <div className="all-containers">
@@ -38,13 +41,13 @@ export default function HomePage() {
           .sort((currentPokemon, nextPokemon) => {
             return currentPokemon.id - nextPokemon.id
           })
-          .map((pokemon, index) =>
+          .map((pokemon) =>
             <PokemonThumb
               id={pokemon.id}
               name={pokemon.name}
               image={pokemon.sprites.other.dream_world.front_default}
               type={pokemon.types[0].type.name}
-              key={index}
+              key={pokemon.id}
             />
           )}
         </div>

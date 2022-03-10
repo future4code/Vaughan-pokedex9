@@ -1,13 +1,14 @@
 import React from "react";
-import HomePage from "./pages/homePage/HomePage"
+import { GlobalState } from "./global/GlobalState";
 import Router from "./routes/Router";
 
 function App() {
   return (
-    <div>
+    <GlobalState>
+      {/* <Header> ? */}
       <Router />
-    </div>
+    </GlobalState>
   );
-}
+};
 
 export default App;
