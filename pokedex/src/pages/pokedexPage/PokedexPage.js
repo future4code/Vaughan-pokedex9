@@ -10,13 +10,10 @@ function PokedexPage() {
   const [pokemonsInfoList, setPokemonsInfoList] = useState([]);
 
   useEffect(() => {
-    console.log("entrou no useeffect");
     getPokemonsInfo();
-    console.log("PokeIdList no useEffect", pokedexIdList);
   }, [pokedexIdList]);
 
   const getPokemonsInfo = () => {
-    console.log("PokeIdList no inicio da requisição", pokedexIdList);
     setPokemonsInfoList([]);
     pokedexIdList.forEach( async (currentId) => {
       try {
@@ -27,14 +24,13 @@ function PokedexPage() {
       };
     });
   };
-  console.log("PokemonsInfo",pokemonsInfoList)
 
-  const removePokemonOfPokedex = (id) => {    
-    const indexId = pokedexIdList.findIndex((pokemonId) => {
-      return pokemonId === id;
+  const removePokemonOfPokedex = (id) => {
+    const copyPokemonIdList = [...pokedexIdList];
+    const removedPokemonList = copyPokemonIdList.filter((pokemonId)=> {
+      return pokemonId !== id;
     });
-    setPokedexIdList(prevList => prevList.splice(indexId, 1));
-    console.log("PokeIdList depois da remoção",pokedexIdList)
+    setPokedexIdList(removedPokemonList);
   };
   
   return (
