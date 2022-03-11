@@ -33,7 +33,7 @@ export default function HomePage() {
   const navigate = useNavigate();
   return (
     <div className="app-container">
-      <button onClick={() => goToPoxedexPage(navigate)}>Ir Para pokedex</button>
+      <button onClick={() => goToPoxedexPage(navigate)}>Ir Para pokedex</button> 
       <div className="pokemon-container">
 
         <div className="all-containers">
