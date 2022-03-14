@@ -1,8 +1,8 @@
 # Projeto POKEDEX
 
-Link do Surge: www.link.com.br
+Link do Surge: http://frightening-kitten.surge.sh/
 
-<a href="sobre">Sobre</a> | <a href="#tecnologias">Tecnologias</a> | <a href="#funciona">O que hunciona</a> | <a href="#nao-funciona">O que não funciona</a> | <a href="#desktop">Imagens Desktop</a> | <a href="#mobile">Imagens Mobile</a> | <a href="#devs">Desenvolvedores</a>
+<a href="sobre">Sobre</a> | <a href="#tecnologias">Tecnologias</a> | <a href="#funciona">O que hunciona</a> | <a href="#nao-funciona">Backlog</a> | <a href="#devs">Desenvolvedores</a>
 
 
 
@@ -31,20 +31,17 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - Página Pokedéx:
     * Página similar à Home, responsável por mostrar a lista de pokemós selecionados para a Pokedéx.
     * Nessa página, é possível remover, da Pokedéx, cada um dos pokemóns selecionados.
-    * Aém disso, a página permite voltar para a Home e dá acesso à página de Detalhes de Pokemón.
+    * Aém disso, a página dá acesso à página de Detalhes de Pokemón.
     
+## <h2 id="nao-funciona">❎ Backlog</h2>
+
 - Página Detalhes de Pokemóns:
     * Página responsável por mostrar informações detalhadas sobre o pokemón selecionado. As informações apresentadas são: imagens do perfil dianteiro e traseiro do pokemón, suas estatísticas, tais como, valor de Hp, ataque, defesa, velocidade, etc, sua classificação quanto à espécie e nome dos ataques.
     * Essa página é acessada quando o (a) usuário (a) clicar para ver os detalhes pokemón específico (botão presente nos cards de pokemón nas páginas Home e Pokedéx).
-    * Além disso, essa página permite voltar à pagina anterior e remover ou adicionar o pokemón da Pokedéx, caso ele esteja ou não na Pokedéx 
+    * Além disso, essa página permite voltar à pagina anterior e remover ou adicionar o pokemón da Pokedéx, caso ele esteja ou não na Pokedéx.
 
-## <h2 id="nao-funciona">❎ O que não funciona</h2>
-- Item 3
-- Item 4
-
-## <h2 id="desktop">💻 Imagens Desktop</h2>
-  
-## <h2 id="mobile">📱 Imagens Mobile</h2>
+- Header com os botões pertinentes.
+   
   
 ## <h2 id="devs">💼 Desenvolvedores</h2>
 - Ádria Tavares
